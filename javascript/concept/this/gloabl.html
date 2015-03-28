@@ -1,0 +1,11 @@
+<h1>`this` is gloabl </h1>
+<script charset="utf-8">
+  function gFunc(){
+    this.x = 123;
+    console.log('this is ',this);
+    console.log('this is window ', this === window);
+  }
+
+  gFunc();
+  console.log('x should be 123 ',x);
+</script>
