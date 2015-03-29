@@ -99,3 +99,26 @@ map.world();
 ````
 
 ##### 4. 使用call,apply,bind来更改this
+
+call和apply的区别在于apply传数组，call传一个个参数
+
+````js
+function sayHi(to, to2){
+  console.log('this is ',this);
+  console.log('this.name is',this.name);
+  console.log('say hi to ' + to + ' and ' + to2);
+}
+
+var jack = {
+  name:'jack'
+};
+
+var marry = {
+  name:'marry'
+};
+
+sayHi();
+sayHi.apply(jack,['sunny','jane']);
+sayHi.apply(marry,['sunny','jane']);
+sayHi.call(jack,'sunny','jane');
+````

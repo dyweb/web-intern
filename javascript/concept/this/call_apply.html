@@ -1,0 +1,22 @@
+<h1>use call and apply to change this</h1>
+
+<script charset="utf-8">
+  function sayHi(to, to2){
+    console.log('this is ',this);
+    console.log('this.name is',this.name);
+    console.log('say hi to ' + to + ' and ' + to2);
+  }
+
+  var jack = {
+    name:'jack'
+  };
+
+  var marry = {
+    name:'marry'
+  };
+
+  sayHi();
+  sayHi.apply(jack,['sunny','jane']);
+  sayHi.apply(marry,['sunny','jane']);
+  sayHi.call(jack,'sunny','jane');
+</script>
