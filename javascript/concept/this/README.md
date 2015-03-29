@@ -126,3 +126,21 @@ console.log(sayHi.bind(jack));
 sayHi.bind(jack)('bind-sunny','bind-jane');
 
 ````
+
+#### 5. 构造函数中的this
+
+绑定到了新new的对象上
+
+````js
+function Person(name,age){
+    this.name = name;
+    this.age = age;
+    console.log('this is', this);
+}
+
+var c = Person('c',12);
+var jack = new Person('jack',13);
+
+console.log(c);
+console.log(jack);
+````

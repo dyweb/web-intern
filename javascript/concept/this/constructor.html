@@ -1,0 +1,15 @@
+<h1>`this` in constructor</h1>
+
+<script charset="utf-8">
+  function Person(name,age){
+      this.name = name;
+      this.age = age;
+      console.log('this is', this);
+  }
+
+  var c = Person('c',12);
+  var jack = new Person('jack',13);
+
+  console.log(c);
+  console.log(jack);
+</script>
