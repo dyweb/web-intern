@@ -100,7 +100,8 @@ map.world();
 
 ##### 4. 使用call,apply,bind来更改this
 
-call和apply的区别在于apply传数组，call传一个个参数
+call和apply的区别在于apply传数组，call传一个个参数.
+bind的区别在于它是返回了一个新的函数，并且确定了这个函数里的this.
 
 ````js
 function sayHi(to, to2){
@@ -121,4 +122,7 @@ sayHi();
 sayHi.apply(jack,['sunny','jane']);
 sayHi.apply(marry,['sunny','jane']);
 sayHi.call(jack,'sunny','jane');
+console.log(sayHi.bind(jack));
+sayHi.bind(jack)('bind-sunny','bind-jane');
+
 ````

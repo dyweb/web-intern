@@ -19,4 +19,6 @@
   sayHi.apply(jack,['sunny','jane']);
   sayHi.apply(marry,['sunny','jane']);
   sayHi.call(jack,'sunny','jane');
+  console.log(sayHi.bind(jack));
+  sayHi.bind(jack)('bind-sunny','bind-jane');
 </script>
