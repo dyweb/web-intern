@@ -19,7 +19,7 @@ function gFunc(){
 console.log(x); // 123
 ````
 
-#### 2. 函数绑定在对象上,this指的是对象.
+##### 2. 函数绑定在对象上,this指的是对象.
 
 ````js
 var person = {
@@ -50,3 +50,52 @@ sayHi2();
 // `this` would be person2
 person2.sayHi();
 ````
+
+如果是使用dom元素
+
+````js
+function sayHi3(){
+  console.log('this is ', this);
+}
+
+var el = document.getElementById('btn');
+el.onclick = sayHi3;
+````
+
+注意在html里的绑定不会改变this,sayHi3里的this仍是window
+````html
+<button type="button" name="button" onclick="sayHi3()">click me 2</button>
+````
+
+##### 3. 在函数里写的函数
+
+注意内层函数的this还是window.并不是外层所绑定到的对象.所以需要有that这种.
+
+````js
+function world(){
+  var that = this;
+  var foo = 'bar';
+  this.dummy = 'dummy';
+  function china(){
+    console.log('this in func china is ',this);
+    console.log('that in func china is ',that);
+    console.log('that.foo is ',that.foo);
+    console.log('foo is ',foo);
+    console.log('that.dummy is ',that.dummy);
+  }
+
+  china();
+}
+
+world();
+
+// if we bind the func to an object
+var map = {
+  world:world
+};
+console.log('world is attached to map now');
+// the nested function's this is Window ... not map
+map.world();
+````
+
+##### 4. 使用call,apply,bind来更改this

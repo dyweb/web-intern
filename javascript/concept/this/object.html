@@ -1,5 +1,9 @@
 <h1>when function is for an object, this is the object</h1>
 
+<button type="button" name="button" id="btn">click me</button>
+
+<button type="button" name="button" onclick="sayHi3()">click me 2</button>
+
 <script charset="utf-8">
 var person = {
   name:'jack',
@@ -24,6 +28,15 @@ var person2 = {
 // `this` would be window.
 sayHi2();
 
-// `this` would be person2 
+// `this` would be person2
 person2.sayHi();
+
+// set it on element
+function sayHi3(){
+  console.log('this is ', this);
+  console.log(typeof this);
+}
+
+var el = document.getElementById('btn');
+el.onclick = sayHi3;
 </script>

@@ -1,0 +1,28 @@
+<h1>See what is `this` in nested functions </h1>
+
+<script charset="utf-8">
+  function world(){
+    var that = this;
+    var foo = 'bar';
+    this.dummy = 'dummy';
+    function china(){
+      console.log('this in func china is ',this);
+      console.log('that in func china is ',that);
+      console.log('that.foo is ',that.foo);
+      console.log('foo is ',foo);
+      console.log('that.dummy is ',that.dummy);
+    }
+
+    china();
+  }
+
+  world();
+
+  // if we bind the func to an object
+  var map = {
+    world:world
+  };
+  console.log('world is attached to map now');
+  // the nested function's this is Window ... not map
+  map.world();
+</script>
