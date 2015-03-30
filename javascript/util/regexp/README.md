@@ -30,10 +30,55 @@ js用法
 ````js
 var pattern = /hi/;
 var str = 'hi hi';
-
 // 测试正则是否匹配
 pattern.test(str); // true
-
 //
 str.match(pattern); //
+// TODO:其他方法
 ````
+
+重复
+
+| 代码 | 说明 |
+| ---- | ---- |
+| `*` | 重复零次或更多次 |
+| `+`| 重复一次或更多次 |
+| `?`| 重复零次或一次 |
+|  `{n}`  |    重复n次  |
+| `{n,}` | 重复n次或更多次 |
+| `{n,m}` | 重复n到m次 |
+
+````js
+var patternPhone = /\d{11}/;
+var jackPhone = 18818233456;
+console.log(patternPhone.test(jackPhone));
+````
+范围 `[]`
+
+eg: `[aeiou]` 匹配任何一个英文元音字母
+eg: `[0-9]` 等价于 `\d`
+
+````js
+var patternHasAbc = /[abc]/;
+var hasAbc = 'i have a dream';
+var noAbc = 'dirt dust';
+
+console.log(patternHasAbc.test(hasAbc));
+console.log(patternHasAbc.test(noAbc));
+````
+
+捕获 `()`
+
+eg: `(\w+)`
+
+````js
+var patternName = /name:(\w+)\s+gender:(\w+)/;
+var profile = 'name:jack gender:male';
+
+var result = profile.match(patternName);
+console.log(result);// ["name:jack ", "jack", index: 0, input: "name:jack gender:male"]
+console.log(result[1]); // jack
+console.log(result[2]); // male
+````
+
+更多的就之后再说了...

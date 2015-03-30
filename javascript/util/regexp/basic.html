@@ -7,4 +7,30 @@
   console.log(str.match(pMatchHi));
   console.log(str.match(pMatchAllHi));
   console.log(str.match(pMatchAllHi)[0]);
+
+  // repeat
+  var patternPhone = /\d{11}/;
+  var jackPhone = 18818233456;
+  var jackPhoneFake = 1234;
+
+  console.log('test number repeat',patternPhone.test(jackPhone));
+  console.log('test number repeat for wrong phone number',
+    patternPhone.test(jackPhoneFake));
+
+  // range
+  var patternHasAbc = /[abc]/;
+  var hasAbc = 'i have a dream';
+  var noAbc = 'dirt dust';
+
+  console.log('test range ',patternHasAbc.test(hasAbc));
+  console.log('test range ',patternHasAbc.test(noAbc));
+
+  // capture
+  var patternName = /name:(\w+)\s+gender:(\w+)/;
+  var profile = 'name:jack gender:male';
+
+  var result = profile.match(patternName);
+  console.log(result);// ["name:jack ", "jack", index: 0, input: "name:jack gender:male"]
+  console.log(result[1]); // jack
+  console.log(result[2]); // male
 </script>
