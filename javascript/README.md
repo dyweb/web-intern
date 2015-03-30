@@ -5,6 +5,7 @@
 - `func.apply` `func.call`
 
 ### Util
+- 常用的正则表达式匹配
 - 扩展String实现trim
 - 扩展Array实现distinct
 - 解析url参数为对象
