@@ -5,6 +5,8 @@
     <title>This is title</title>
 </head>
 <body>
+<div id="moza"><h1>i am moza</h1></div>
+<button onclick="removeMoza()">remove moza</button>
 <button onclick="changeTitle()">change title!</button>
 <script>
     function changeTitle() {
@@ -15,6 +17,20 @@
 //        console.log(head);
         head.childNodes[1].innerHTML = '<title>i am changed!</title>';
         console.log('head\'s parent is html', head.parentNode === html);
+    }
+
+    function removeMoza() {
+        var moza = document.getElementById('moza');
+        //  http://stackoverflow.com/questions/3387427/remove-element-by-id
+        //  As of DOM4, a helper function is provided to do the same thing: element.remove().
+        if (typeof moza.remove !== 'undefined') {
+            moza.remove();
+        } else {
+            // 如果要支持ie只能通过parent去删child
+            moza.parentNode.removeChild(moza);
+        }
+
+
     }
 </script>
 </body>
