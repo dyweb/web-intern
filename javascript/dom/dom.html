@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>This is title</title>
+</head>
+<body>
+<button onclick="changeTitle()">change title!</button>
+<script>
+    function changeTitle() {
+//        DOCTYPE 也是一个节点
+        var html = document.childNodes[1];
+//        console.log(html);
+        var head = html.childNodes[0];
+//        console.log(head);
+        head.childNodes[1].innerHTML = '<title>i am changed!</title>';
+        console.log('head\'s parent is html', head.parentNode === html);
+    }
+</script>
+</body>
+</html>
