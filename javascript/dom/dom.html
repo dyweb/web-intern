@@ -8,6 +8,7 @@
 <div id="moza"><h1>i am moza</h1></div>
 <button onclick="removeMoza()">remove moza</button>
 <button onclick="changeTitle()">change title!</button>
+<button onclick="addDoubi()">add doubi</button>
 <script>
     function changeTitle() {
 //        DOCTYPE 也是一个节点
@@ -29,8 +30,13 @@
             // 如果要支持ie只能通过parent去删child
             moza.parentNode.removeChild(moza);
         }
+    }
 
-
+    function addDoubi() {
+        var child = document.createElement('div');
+        child.innerHTML = 'i am a doubi!';
+        document.getElementsByTagName('body')[0].appendChild(child);
+//        document.getElementsByName('body').appendChild(child);
     }
 </script>
 </body>
