@@ -28,13 +28,13 @@
 
 js用法
 ````js
-var pattern = /hi/;
+var pattern = /hi/;　// /h1/g /hi/i /hi/gi 全局匹配和是否区分大小写
 var str = 'hi hi';
 // 测试正则是否匹配
 pattern.test(str); // true
 //
 str.match(pattern); //
-// TODO:其他方法
+// TODO:其他方法 search, exec
 ````
 
 重复
@@ -80,5 +80,6 @@ console.log(result);// ["name:jack ", "jack", index: 0, input: "name:jack gender
 console.log(result[1]); // jack
 console.log(result[2]); // male
 ````
+####　常用正则表达式
 
 更多的就之后再说了...
